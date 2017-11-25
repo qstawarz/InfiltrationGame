@@ -9,17 +9,20 @@
 using namespace Actors;
 using namespace Managers;
 
+int Enemy::m_countId = 0;
+
 Enemy::Enemy(sf::RenderWindow *p_window,
              sf::Time *p_deltaTime,
              Vector<float> *p_playerPos,
              const Vector<float> &p_pos,
              const float &p_angle) : m_window {p_window}, m_deltaTime {p_deltaTime}, m_playerPos {p_playerPos},
                                      m_sprite {nullptr}, m_lines {sf::VertexArray(sf::Lines, 4)},
-                                     m_pos {p_pos}, m_forward {}, m_line1 {}, m_line2 {},
-                                     m_angle {360 - p_angle}, m_rotation {10.0f},
-                                     m_scale {1.0f}, m_speed {1.0f},
+                                     m_pos {p_pos}, m_initialForward {}, m_forward {}, m_line1 {}, m_line2 {},
+                                     m_initialAngle {p_angle}, m_angle {360 - p_angle}, m_rotation {1.0f},
+                                     m_scale {1.0f}, m_speed {10.0f}, m_clockWiseBack {},
                                      m_visionAngle {static_cast<float>(10.0f * (M_PI / 180.0f))},
-                                     m_visionLength {250.0f}, m_playerIsIn {false}
+                                     m_visionLength {250.0f}, m_playerIsIn {false}, m_clockWise {true},
+                                     m_id {++m_countId}
 {
     std::cout << "Enemy created" << std::endl;
 }
@@ -47,6 +50,7 @@ void Enemy::Setup()
     this->m_forward = this->m_pos.translate(this->m_visionLength,
                                             static_cast<float>(0.0f + this->m_angle * (M_PI / 180.0f)));
     this->m_forward -= this->m_pos;
+    this->m_initialForward = this->m_forward;
     //FOV
     this->m_line1 = this->m_pos.translate(this->m_visionLength,
                                               static_cast<float>(this->m_visionAngle + this->m_angle * (M_PI / 180.0f)));
@@ -113,8 +117,26 @@ void Enemy::Display()
 
 void Enemy::Move()
 {
-//    this->m_angle += this->m_rotation * this->m_speed * this->m_deltaTime->asSeconds();
-//    this->m_sprite->getSprite()->rotate(this->m_rotation * this->m_speed * this->m_deltaTime->asSeconds());
+    float angle = this->m_forward.angle2D(this->m_initialForward);
+
+    if (this->m_clockWise && angle < 45 - (this->m_visionAngle * (180 / M_PI)))
+    {
+        this->m_clockWiseBack = this->m_forward;
+
+        this->m_sprite->getSprite()->rotate(this->m_rotation * this->m_speed * this->m_deltaTime->asSeconds());
+        this->m_angle += this->m_rotation * this->m_speed * this->m_deltaTime->asSeconds();
+    }
+    else
+    {
+        angle = this->m_forward.angle2D(this->m_clockWiseBack);
+        this->m_clockWise = false;
+
+        this->m_sprite->getSprite()->rotate(-this->m_rotation * this->m_speed * this->m_deltaTime->asSeconds());
+        this->m_angle += -this->m_rotation * this->m_speed * this->m_deltaTime->asSeconds();
+
+        if (angle > 89 - (this->m_visionAngle * (180 / M_PI)) * 2)
+            this->m_clockWise = true;
+    }
 }
 
 void Enemy::Intersect()
@@ -124,6 +146,5 @@ void Enemy::Intersect()
     float length = this->m_pos.length(*this->m_playerPos);
     float angle = this->m_forward.angle2D(newPlayerPos);
 
-    this->m_playerIsIn = ((length < this->m_visionLength) &&
-                          (angle < ((this->m_visionAngle) * 180 / M_PI)));
+    this->m_playerIsIn = ((length < this->m_visionLength) && (angle < (this->m_visionAngle * (180 / M_PI))));
 }
