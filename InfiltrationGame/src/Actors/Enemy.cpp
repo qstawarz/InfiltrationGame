@@ -14,8 +14,10 @@ Enemy::Enemy(sf::RenderWindow *p_window,
              Vector<float> *p_playerPos,
              const Vector<float> &p_pos,
              const float &p_angle) : m_window {p_window}, m_deltaTime {p_deltaTime}, m_playerPos {p_playerPos},
-                                     m_sprite {nullptr}, m_triangles {sf::VertexArray(sf::Triangles, 6)},
-                                     m_pos {p_pos}, m_angle {p_angle}, m_scale {1.0f}, m_speed {10.0f},
+                                     m_sprite {nullptr}, m_lines {sf::VertexArray(sf::Lines, 4)},
+                                     m_pos {p_pos}, m_forward {}, m_line1 {}, m_line2 {},
+                                     m_angle {360 - p_angle}, m_rotation {10.0f},
+                                     m_scale {1.0f}, m_speed {1.0f},
                                      m_visionAngle {static_cast<float>(10.0f * (M_PI / 180.0f))},
                                      m_visionLength {250.0f}, m_playerIsIn {false}
 {
@@ -41,50 +43,62 @@ void Enemy::Setup()
     this->m_sprite->getSprite()->setPosition(this->m_pos.toSFML());
     this->m_sprite->getSprite()->scale(Vector<float>(this->m_scale, this->m_scale, true).toSFML());
     this->m_sprite->getSprite()->rotate(this->m_angle);
-    //FOV Triangle
-    Vector<float> pt1 = this->m_pos.translate(this->m_visionLength, this->m_visionAngle);
-    Vector<float> pt2 = this->m_pos.translate(this->m_visionLength, 0.0f);
-    Vector<float> pt3 = this->m_pos.translate(this->m_visionLength, -this->m_visionAngle);
-    //Triangle 1
-    this->m_triangles[0].position = this->m_pos.toSFML();
-    this->m_triangles[0].color = sf::Color::Green;
-    this->m_triangles[1].position = pt1.toSFML();
-    this->m_triangles[1].color = sf::Color::Green;
-    this->m_triangles[2].position = pt2.toSFML();
-    this->m_triangles[2].color = sf::Color::Green;
-    //Triangle 2
-    this->m_triangles[3].position = this->m_pos.toSFML();
-    this->m_triangles[3].color = sf::Color::Green;
-    this->m_triangles[4].position = pt2.toSFML();
-    this->m_triangles[4].color = sf::Color::Green;
-    this->m_triangles[5].position = pt3.toSFML();
-    this->m_triangles[5].color = sf::Color::Green;
+    //Vector forward
+    this->m_forward = this->m_pos.translate(this->m_visionLength,
+                                            static_cast<float>(0.0f + this->m_angle * (M_PI / 180.0f)));
+    this->m_forward -= this->m_pos;
+    //FOV
+    this->m_line1 = this->m_pos.translate(this->m_visionLength,
+                                              static_cast<float>(this->m_visionAngle + this->m_angle * (M_PI / 180.0f)));
+    this->m_line2 = this->m_pos.translate(this->m_visionLength,
+                                              static_cast<float>(-this->m_visionAngle + this->m_angle * (M_PI / 180.0f)));
+    //Line 1
+    this->m_lines[0].position = this->m_pos.toSFML();
+    this->m_lines[0].color = sf::Color::Green;
+    this->m_lines[1].position = this->m_line1.toSFML();
+    this->m_lines[1].color = sf::Color::Green;
+    //Line 2
+    this->m_lines[2].position = this->m_pos.toSFML();
+    this->m_lines[2].color = sf::Color::Green;
+    this->m_lines[3].position = this->m_line2.toSFML();
+    this->m_lines[3].color = sf::Color::Green;
 }
 
 void Enemy::Update()
-{
+{   //Pos
     this->m_pos.x() = this->m_sprite->getSprite()->getPosition().x;
     this->m_pos.y() = this->m_sprite->getSprite()->getPosition().y;
-
+    //Vector forward
+    this->m_forward = this->m_pos.translate(this->m_visionLength,
+                                              static_cast<float>(0.0f + this->m_angle * (M_PI / 180.0f)));
+    this->m_forward -= this->m_pos;
+    //FOV
+    this->m_line1 = this->m_pos.translate(this->m_visionLength,
+                                              static_cast<float>(this->m_visionAngle + this->m_angle * (M_PI / 180.0f)));
+    this->m_line2 = this->m_pos.translate(this->m_visionLength,
+                                              static_cast<float>(-this->m_visionAngle + this->m_angle * (M_PI / 180.0f)));
+    //Line 1
+    this->m_lines[0].position = this->m_pos.toSFML();
+    this->m_lines[1].position = this->m_line1.toSFML();
+    //Line 2
+    this->m_lines[2].position = this->m_pos.toSFML();
+    this->m_lines[3].position = this->m_line2.toSFML();
+    //In / Out condition
     if (this->m_playerIsIn)
-    {   //Triangle 1
-        this->m_triangles[0].color = sf::Color::Red;
-        this->m_triangles[1].color = sf::Color::Red;
-        this->m_triangles[2].color = sf::Color::Red;
-        //Triangle 2
-        this->m_triangles[3].color = sf::Color::Red;
-        this->m_triangles[4].color = sf::Color::Red;
-        this->m_triangles[5].color = sf::Color::Red;
+    {   //Line 1
+        this->m_lines[0].color = sf::Color::Red;
+        this->m_lines[1].color = sf::Color::Red;
+        //Line 2
+        this->m_lines[2].color = sf::Color::Red;
+        this->m_lines[3].color = sf::Color::Red;
     }
     else
-    {   //Triangle 1
-        this->m_triangles[0].color = sf::Color::Green;
-        this->m_triangles[1].color = sf::Color::Green;
-        this->m_triangles[2].color = sf::Color::Green;
-        //Triangle 2
-        this->m_triangles[3].color = sf::Color::Green;
-        this->m_triangles[4].color = sf::Color::Green;
-        this->m_triangles[5].color = sf::Color::Green;
+    {   //Line 1
+        this->m_lines[0].color = sf::Color::Green;
+        this->m_lines[1].color = sf::Color::Green;
+        //Line 2
+        this->m_lines[2].color = sf::Color::Green;
+        this->m_lines[3].color = sf::Color::Green;
     }
 
     this->Move();
@@ -93,26 +107,23 @@ void Enemy::Update()
 
 void Enemy::Display()
 {
-    this->m_window->draw(this->m_triangles);
+    this->m_window->draw(this->m_lines);
     this->m_window->draw(*this->m_sprite->getSprite());
 }
 
 void Enemy::Move()
 {
-//    auto angle = static_cast<float>(90.0f * (M_PI / 180.0f));
-//    this->m_sprite->getSprite()->rotate(angle * this->m_speed * this->m_deltaTime->asSeconds());
-
-    //TODO Recalculate pos of FOV for the enemy rotate
+//    this->m_angle += this->m_rotation * this->m_speed * this->m_deltaTime->asSeconds();
+//    this->m_sprite->getSprite()->rotate(this->m_rotation * this->m_speed * this->m_deltaTime->asSeconds());
 }
 
 void Enemy::Intersect()
-{
+{   //Vector between Player and Camera
+    Vector<float> newPlayerPos = *this->m_playerPos - this->m_pos;
+
     float length = this->m_pos.length(*this->m_playerPos);
-    float angle = this->m_pos.atan2BetweenVectors(*this->m_playerPos);
-    angle -= 180;
+    float angle = this->m_forward.angle2D(newPlayerPos);
 
     this->m_playerIsIn = ((length < this->m_visionLength) &&
-                          (abs(static_cast<int>(angle)) < (this->m_visionAngle) * 180 / M_PI)) ||
-                         ((length < this->m_visionLength) &&
-                          (abs(static_cast<int>(angle)) > 360.0f - ((this->m_visionAngle) * 180 / M_PI)));
+                          (angle < ((this->m_visionAngle) * 180 / M_PI)));
 }

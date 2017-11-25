@@ -14,7 +14,7 @@ Player::Player(sf::RenderWindow *p_window,
                Vector<float> *p_dir) : m_window {p_window}, m_dir {p_dir}, m_deltaTime {p_deltaTime},
                                        m_sprite {nullptr},
                                        m_pos {DisplayManager::m_windowW / 2, DisplayManager::m_windowH / 2, true},
-                                       m_scale {0.2f}, m_speed {250.0f}
+                                       m_scale {0.2f}, m_speed {100.0f}
 {
     std::cout << "Player created" << std::endl;
 }

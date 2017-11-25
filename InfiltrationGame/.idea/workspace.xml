@@ -27,8 +27,8 @@
           <file leaf-file-name="Game.cpp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Managers/Game.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="214">
-                  <caret line="70" column="52" lean-forward="false" selection-start-line="68" selection-start-column="7" selection-end-line="70" selection-end-column="52" />
+                <state relative-caret-position="51">
+                  <caret line="70" column="71" lean-forward="false" selection-start-line="70" selection-start-column="71" selection-end-line="70" selection-end-column="71" />
                   <folding>
                     <element signature="e#43#62#0" expanded="true" />
                   </folding>
@@ -39,8 +39,8 @@
           <file leaf-file-name="Player.cpp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Actors/Player.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="16" column="51" lean-forward="false" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+                <state relative-caret-position="-420">
+                  <caret line="16" column="67" lean-forward="false" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
                   <folding>
                     <element signature="e#43#62#0" expanded="true" />
                   </folding>
@@ -51,11 +51,21 @@
           <file leaf-file-name="Enemy.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Actors/Enemy.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="312">
-                  <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+                <state relative-caret-position="496">
+                  <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="2" selection-end-line="116" selection-end-column="109" />
                   <folding>
                     <element signature="e#43#62#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="DisplayManager.h" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/includes/Managers/DisplayManager.h">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="309">
+                  <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -91,8 +101,8 @@
           <file leaf-file-name="Enemy.h" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/includes/Actors/Enemy.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="147">
-                  <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+                <state relative-caret-position="420">
+                  <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
                   <folding>
                     <element signature="e#99#127#0" expanded="true" />
                   </folding>
@@ -103,8 +113,8 @@
           <file leaf-file-name="Vector.h" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/includes/Utils/Vector.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-245">
-                  <caret line="257" column="37" lean-forward="false" selection-start-line="257" selection-start-column="37" selection-end-line="257" selection-end-column="37" />
+                <state relative-caret-position="3514">
+                  <caret line="256" column="0" lean-forward="true" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -131,13 +141,13 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/includes/Managers/InputManager.h" />
         <option value="$PROJECT_DIR$/src/Managers/InputManager.cpp" />
-        <option value="$PROJECT_DIR$/includes/Managers/DisplayManager.h" />
         <option value="$PROJECT_DIR$/includes/Utils/Vector.h" />
         <option value="$PROJECT_DIR$/includes/Managers/Game.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/src/Managers/Game.cpp" />
         <option value="$PROJECT_DIR$/includes/Actors/Player.h" />
         <option value="$PROJECT_DIR$/src/Actors/Player.cpp" />
+        <option value="$PROJECT_DIR$/includes/Managers/DisplayManager.h" />
+        <option value="$PROJECT_DIR$/src/Managers/Game.cpp" />
         <option value="$PROJECT_DIR$/includes/Actors/Enemy.h" />
         <option value="$PROJECT_DIR$/src/Actors/Enemy.cpp" />
       </list>
@@ -150,8 +160,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="150" />
-    <option name="width" value="1238" />
+    <option name="x" value="-8" />
+    <option name="width" value="976" />
     <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
@@ -271,12 +281,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511539872984</updated>
-      <workItem from="1511539874741" duration="38452000" />
+      <workItem from="1511539874741" duration="48249000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38452000" />
+    <option name="totallyTimeSpent" value="48249000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -417,14 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/Managers/DisplayManager.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -443,24 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/Utils/Vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-245">
-          <caret line="257" column="37" lean-forward="false" selection-start-line="257" selection-start-column="37" selection-end-line="257" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Managers/Game.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="70" column="52" lean-forward="false" selection-start-line="68" selection-start-column="7" selection-end-line="70" selection-end-column="52" />
-          <folding>
-            <element signature="e#43#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/includes/Actors/Player.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -473,8 +457,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Actors/Player.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="51" lean-forward="false" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
+        <state relative-caret-position="-420">
+          <caret line="16" column="67" lean-forward="false" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
+          <folding>
+            <element signature="e#43#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/Managers/DisplayManager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/Utils/Vector.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3514">
+          <caret line="256" column="0" lean-forward="true" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Managers/Game.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="70" column="71" lean-forward="false" selection-start-line="70" selection-start-column="71" selection-end-line="70" selection-end-column="71" />
           <folding>
             <element signature="e#43#62#0" expanded="true" />
           </folding>
@@ -483,8 +493,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/Actors/Enemy.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        <state relative-caret-position="420">
+          <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
           <folding>
             <element signature="e#99#127#0" expanded="true" />
           </folding>
@@ -493,8 +503,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Actors/Enemy.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+        <state relative-caret-position="496">
+          <caret line="115" column="0" lean-forward="false" selection-start-line="115" selection-start-column="2" selection-end-line="116" selection-end-column="109" />
           <folding>
             <element signature="e#43#62#0" expanded="true" />
           </folding>

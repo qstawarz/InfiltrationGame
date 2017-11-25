@@ -20,16 +20,20 @@ namespace Actors
     private:
         sf::RenderWindow *m_window;
         sf::Time *m_deltaTime;
-        sf::VertexArray m_triangles;
+        sf::VertexArray m_lines;
 
         Sprite *m_sprite;
 
         Vector<float> m_pos;
+        Vector<float> m_forward;
+        Vector<float> m_line1;
+        Vector<float> m_line2;
         Vector<float> *m_playerPos;
 
         float m_scale;
         float m_speed;
         float m_angle;
+        float m_rotation;
         float m_visionAngle; //Between ]0,45]
         float m_visionLength; //Between [100, 700]
 

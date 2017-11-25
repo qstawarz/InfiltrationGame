@@ -14,8 +14,8 @@ namespace Managers
     class DisplayManager : public IManager
     {
     public:
-        static const unsigned m_windowW = 800;
-        static const unsigned m_windowH = 600;
+        static const unsigned m_windowW = 500;
+        static const unsigned m_windowH = 500;
 
     private:
         sf::RenderWindow *m_window;
