@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="SFMLQuickStart"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SFMLQuickStart">
+				<Option output="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/SFMLQuickStart.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/MinGW/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 SFMLQuickStart"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="SFMLQuickStart/fast">
+				<Option output="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/SFMLQuickStart.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/MinGW/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 SFMLQuickStart/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/includes/Actors/Enemy.h">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/includes/Actors/IActor.h">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/includes/Actors/Player.h">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/includes/Managers/DisplayManager.h">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/includes/Managers/Game.h">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/includes/Managers/IManager.h">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/includes/Managers/InputManager.h">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/includes/Managers/UIManager.h">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/includes/Utils/Sprite.h">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/includes/Utils/Text.h">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/main.cpp">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/src/Actors/Enemy.cpp">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/src/Actors/Player.cpp">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/src/Managers/DisplayManager.cpp">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/src/Managers/Game.cpp">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/src/Managers/InputManager.cpp">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/src/Managers/UIManager.cpp">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/src/Utils/Sprite.cpp">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/src/Utils/Text.cpp">
+			<Option target="SFMLQuickStart"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/Quentin/Desktop/Isart Digital/GP1/Math/DotProduct/cmake_modules/FindSFML.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
