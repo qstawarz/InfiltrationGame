@@ -32,6 +32,8 @@ namespace Managers
         sf::Time m_deltaTime;
         sf::Time m_time;
 
+        bool m_isGameOver;
+
     public:
         Game();
         ~Game();

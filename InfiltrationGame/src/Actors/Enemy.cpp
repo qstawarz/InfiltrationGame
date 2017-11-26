@@ -20,8 +20,8 @@ Enemy::Enemy(sf::RenderWindow *p_window,
                                      m_pos {p_pos}, m_initialForward {}, m_forward {}, m_line1 {}, m_line2 {},
                                      m_initialAngle {p_angle}, m_angle {360 - p_angle}, m_rotation {1.0f},
                                      m_scale {1.0f}, m_speed {10.0f}, m_clockWiseBack {},
-                                     m_visionAngle {static_cast<float>(10.0f * (M_PI / 180.0f))},
-                                     m_visionLength {250.0f}, m_playerIsIn {false}, m_clockWise {true},
+                                     m_visionAngle {static_cast<float>(/*(rand()%30 + 10)*/10.0f * (M_PI / 180.0f))},
+                                     m_visionLength {/*rand()%300 + 100*/250.0f}, m_isIn {false}, m_clockWise {true},
                                      m_id {++m_countId}
 {
     std::cout << "Enemy created" << std::endl;
@@ -87,23 +87,6 @@ void Enemy::Update()
     //Line 2
     this->m_lines[2].position = this->m_pos.toSFML();
     this->m_lines[3].position = this->m_line2.toSFML();
-    //In / Out condition
-    if (this->m_playerIsIn)
-    {   //Line 1
-        this->m_lines[0].color = sf::Color::Red;
-        this->m_lines[1].color = sf::Color::Red;
-        //Line 2
-        this->m_lines[2].color = sf::Color::Red;
-        this->m_lines[3].color = sf::Color::Red;
-    }
-    else
-    {   //Line 1
-        this->m_lines[0].color = sf::Color::Green;
-        this->m_lines[1].color = sf::Color::Green;
-        //Line 2
-        this->m_lines[2].color = sf::Color::Green;
-        this->m_lines[3].color = sf::Color::Green;
-    }
 
     this->Move();
     this->Intersect();
@@ -145,6 +128,27 @@ void Enemy::Intersect()
 
     float length = this->m_pos.length(*this->m_playerPos);
     float angle = this->m_forward.angle2D(newPlayerPos);
+    //In / Out condition
+    this->m_isIn = ((length < this->m_visionLength) && (angle < (this->m_visionAngle * (180 / M_PI))));
+    if (this->m_isIn)
+    {   //Line 1
+        this->m_lines[0].color = sf::Color::Red;
+        this->m_lines[1].color = sf::Color::Red;
+        //Line 2
+        this->m_lines[2].color = sf::Color::Red;
+        this->m_lines[3].color = sf::Color::Red;
+    }
+    else
+    {   //Line 1
+        this->m_lines[0].color = sf::Color::Green;
+        this->m_lines[1].color = sf::Color::Green;
+        //Line 2
+        this->m_lines[2].color = sf::Color::Green;
+        this->m_lines[3].color = sf::Color::Green;
+    }
+}
 
-    this->m_playerIsIn = ((length < this->m_visionLength) && (angle < (this->m_visionAngle * (180 / M_PI))));
+bool Enemy::IsIn() const
+{
+    return this->m_isIn;
 }

@@ -9,7 +9,7 @@ using namespace Managers;
 
 Game::Game() : m_displayManager {nullptr}, m_inputManager {nullptr}, m_uiManager {nullptr},
                m_player {nullptr}, m_enemy1 {nullptr}, m_enemy2 {nullptr}, m_enemy3 {nullptr}, m_enemy4 {nullptr},
-               m_clock {}, m_time {}, m_deltaTime {}
+               m_clock {}, m_time {}, m_deltaTime {}, m_isGameOver {false}
 {
     std::cout << "Game created" << std::endl;
 }
@@ -57,7 +57,7 @@ void Game::Setup()
         this->m_inputManager->Setup();
     //UIManager
     if (this->m_displayManager->IsStarted());
-    this->m_uiManager = new UIManager(this->m_displayManager->getWindow());
+    this->m_uiManager = new UIManager(this->m_displayManager->getWindow(), &this->m_time);
     if (this->m_uiManager != nullptr)
         this->m_uiManager->Setup();
     //Player
@@ -68,28 +68,25 @@ void Game::Setup()
     //Enemy 1 TopLeft
     if (this->m_displayManager->IsStarted())
         this->m_enemy1 = new Enemy(this->m_displayManager->getWindow(), &this->m_deltaTime, this->m_player->getPos(),
-                                   Vector<float>(0.0f, 0.0f, true), 315.0f); //315 or 45
-//    if (this->m_displayManager->IsStarted())
-//        this->m_enemy1 = new Enemy(this->m_displayManager->getWindow(), &this->m_deltaTime, this->m_player->getPos(),
-//                                   Vector<float>(0.0f, DisplayManager::m_windowH / 2, true), 0.0f);
+                                   Vector<float>(0.0f, 0.0f, true), 315.0f);
     if (this->m_enemy1 != nullptr)
         this->m_enemy1->Setup();
     //Enemy 2 TopRight
     if (this->m_displayManager->IsStarted())
         this->m_enemy2 = new Enemy(this->m_displayManager->getWindow(), &this->m_deltaTime, this->m_player->getPos(),
-                                   Vector<float>(DisplayManager::m_windowW, 0.0f, true), 225.0f); //225 or 135
+                                   Vector<float>(DisplayManager::m_windowW, 0.0f, true), 225.0f);
     if (this->m_enemy2 != nullptr)
         this->m_enemy2->Setup();
     //Enemy 3 BotRight
     if (this->m_displayManager->IsStarted())
         this->m_enemy3 = new Enemy(this->m_displayManager->getWindow(), &this->m_deltaTime, this->m_player->getPos(),
-                                   Vector<float>(DisplayManager::m_windowW, DisplayManager::m_windowH, true), 135.0f); //135 or 225
+                                   Vector<float>(DisplayManager::m_windowW, DisplayManager::m_windowH, true), 135.0f);
     if (this->m_enemy3 != nullptr)
         this->m_enemy3->Setup();
     //Enemy 4 BotLeft
     if (this->m_displayManager->IsStarted())
         this->m_enemy4 = new Enemy(this->m_displayManager->getWindow(), &this->m_deltaTime, this->m_player->getPos(),
-                                   Vector<float>(0.0f, DisplayManager::m_windowH, true), 45.0f); //45 or 315
+                                   Vector<float>(0.0f, DisplayManager::m_windowH, true), 45.0f);
     if (this->m_enemy4 != nullptr)
         this->m_enemy4->Setup();
 }
@@ -100,14 +97,20 @@ void Game::Update()
 
     this->m_inputManager->Update();
 
-    this->m_uiManager->Update();
+    if (!this->m_isGameOver)
+        this->m_uiManager->Update();
 
-    this->m_player->Update();
+    if (!this->m_isGameOver)
+        this->m_player->Update();
 
-    this->m_enemy1->Update();
-    this->m_enemy2->Update();
-    this->m_enemy3->Update();
-    this->m_enemy4->Update();
+    if (!this->m_enemy1->IsIn())
+        this->m_enemy1->Update();
+    if (!this->m_enemy2->IsIn())
+        this->m_enemy2->Update();
+    if (!this->m_enemy3->IsIn())
+        this->m_enemy3->Update();
+    if (!this->m_enemy4->IsIn())
+        this->m_enemy4->Update();
 }
 
 void Game::Display()
@@ -119,8 +122,17 @@ void Game::Display()
 
     this->m_player->Display();
 
-    this->m_uiManager->Display();
-//    this->m_uiManager->Score();
+    if (!this->m_isGameOver)
+    {
+        this->m_uiManager->Display();
+        this->m_uiManager->Time();
+    }
+    if (this->m_isGameOver || this->m_enemy1->IsIn() || this->m_enemy2->IsIn() || this->m_enemy3->IsIn() || this->m_enemy4->IsIn())
+    {
+        this->m_uiManager->GameOver();
+        this->m_uiManager->Score();
+        this->m_isGameOver = true;
+    }
 
     this->m_displayManager->getWindow()->display();
 }

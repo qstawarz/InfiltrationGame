@@ -27,7 +27,6 @@ void DisplayManager::Setup()
     if (this->m_window != nullptr)
         this->m_isStarted = true;
 
-    this->m_window->setVerticalSyncEnabled(true);
     this->m_window->setFramerateLimit(60);
 }
 

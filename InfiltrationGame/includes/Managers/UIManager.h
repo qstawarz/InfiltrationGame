@@ -18,11 +18,14 @@ namespace Managers
     {
     private:
         sf::RenderWindow *m_window;
+        sf::Time *m_time;
+
+        sf::Time m_lastTime;
 
         Text *m_text;
 
     public:
-        explicit UIManager(sf::RenderWindow *p_window);
+        explicit UIManager(sf::RenderWindow *p_window, sf::Time *p_time);
         ~UIManager();
 
         void Setup() override;
@@ -30,6 +33,7 @@ namespace Managers
 
         void Display();
 
+        void Time();
         void Score();
         void GameOver();
 

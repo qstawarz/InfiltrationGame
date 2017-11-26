@@ -38,12 +38,12 @@ namespace Actors
         float m_angle;
         float m_rotation;
         float m_visionAngle; //Between ]0,45]
-        float m_visionLength; //Between [100, 700]
+        float m_visionLength; //Between [100, 500]
 
         int m_id;
         static int m_countId;
 
-        bool m_playerIsIn;
+        bool m_isIn;
         bool m_clockWise;
 
     public:
@@ -57,6 +57,8 @@ namespace Actors
         void Move() override;
 
         void Intersect();
+
+        bool IsIn() const;
 
     };
 }
